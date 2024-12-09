@@ -1,0 +1,25 @@
+package fibonnacci;
+
+import java.math.BigInteger;
+
+public class fibo {
+	public static BigInteger tab[] = new BigInteger[100000];
+	public static void main(String[] args) {
+		System.out.println(fibo(9550));
+	}
+	public static BigInteger fibo(int rang) {
+		if(tab[rang] !=  null   ) {
+			return tab[rang];
+		}
+		if(rang == 0 ) {
+			return BigInteger.ZERO;
+		}
+		if(rang == 1) {
+			return BigInteger.ONE;
+		}
+		tab[rang] = fibo(rang - 1).add(fibo(rang - 2));
+		return tab[rang];
+
+		
+	}
+}
